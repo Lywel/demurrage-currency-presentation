@@ -171,7 +171,9 @@
   \begin{frame}{What is decentralization?}
     \begin{itemize}
       \item Network with \alert{no master}
+      \pause
       \item \alert{Trustless}
+      \pause
       \item No single point of failure
     \end{itemize}
   \end{frame}
@@ -180,6 +182,7 @@
   \begin{frame}{How to achieve decentralization?}
     \begin{itemize}
       \item \alert{Smartcontracts}
+      \pause
       \item Custom \alert{consensus} algorithm
     \end{itemize}
   \end{frame}
@@ -192,9 +195,13 @@
   \begin{frame}{Smart contract}
     \begin{itemize}
       \item \alert{Autonomous} piece of code
+      \pause
       \item Lives on a \alert{blockchain}
+      \pause
       \item \alert{Trackable} activity
+      \pause
       \item \alert{Irreversible} transactions
+      \pause
       \item Many fields of applications
     \end{itemize}
     \note{Voting systems, domain registery, financial exanche, saving account,
@@ -207,10 +214,12 @@
       \item Type of \alert{smartcontract}
       \item Lives on the \alert{Ethereum} blockchain
     \end{itemize}
+      \pause
     \begin{itemize}
       \item Safe and Documented
       \item Easy to code and deploy
     \end{itemize}
+      \pause
     \begin{itemize}
       \item Transaction costs money (ether gas)
       \item No control over miners reward
@@ -227,7 +236,9 @@
   \begin{frame}{Consensus in blockchain}
     \begin{itemize}
       \item Rules that define the blockchain
+      \pause
       \item Block creation and validation
+      \pause
       \item Many popular consensus
     \end{itemize}
     \note{Major part in blockchain implementation\\
@@ -238,6 +249,7 @@
   \begin{frame}{Proof of work}
     \begin{itemize}
       \item Block creation require CPU usage
+      \pause
       \item Complex mathematical operation
     \end{itemize}
     \note{Used by bitcoin\\
@@ -251,7 +263,9 @@
   \begin{frame}{Proof of stake}
     \begin{itemize}
       \item Block creation require stake
+      \pause
       \item Use less energy
+      \pause
       \item Has some vulnerabilities
     \end{itemize}
     \note{Same hashing process\\
@@ -274,6 +288,7 @@
   \begin{frame}{Proof of authority}
     \begin{itemize}
       \item Indentity as a stake
+      \pause
       \item Require a central authority
     \end{itemize}
     \note{not anonymous\\
@@ -286,7 +301,9 @@
   \begin{frame}{Practical Byzantine fault tolerance}
     \begin{itemize}
       \item State machine replication
+      \pause
       \item Work with malicious nodes
+      \pause
       \item 2/3 votes to reach concensus
     \end{itemize}
     \note{every validator share state\\
@@ -298,8 +315,11 @@
   \begin{frame}{Advantages of PBFT}
     \begin{itemize}
       \item Transaction finality
+      \pause
       \item Energy efficient
+      \pause
       \item Each validator can be rewarded
+      \pause
       \item High performances on small networks
     \end{itemize}
     \note{very effective on small networks (40 nodes)
@@ -319,7 +339,9 @@
   \begin{frame}{Istanbul Byzantine fault tolerance (IBFT)}
     \begin{itemize}
       \item Improvement of PBFT
+      \pause
       \item Gossip network
+      \pause
       \item Optimisations
     \end{itemize}
     \note{Implemented by Quorum and a fork of ethereum\\
@@ -331,7 +353,9 @@
   \begin{frame}{Clique PoA}
     \begin{itemize}
       \item Signers submit blocks
+      \pause
       \item Voting system
+      \pause
       \item Protection against malicious signers
     \end{itemize}
     \note{ signers submit block sequentialy\\
@@ -343,7 +367,9 @@
   \begin{frame}{IBFT + PoA}
     \begin{itemize}
       \item Semi-decentralized blockchain
+      \pause
       \item Central authority delivers authorizations
+      \pause
       \item Small network (100 validators)
     \end{itemize}
     \note{semi-decentralized blockchain\\
@@ -355,7 +381,9 @@
   \begin{frame}{Problems encountered}
     \begin{itemize}
       \item Create a TCP communication protocol
+      \pause
       \item A lot of cryptography
+      \pause
       \item Synchronization between validators
     \end{itemize}
 

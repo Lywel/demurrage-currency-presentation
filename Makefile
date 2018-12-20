@@ -8,6 +8,7 @@ all: latex
 	cp ./$(CTEX_OUT_DIR)/$(PDF_NAME) ./$(PDF_NAME)
 
 latex:
+	mkdir -p $(CTEX_OUT_DIR)
 	$(CTEX) $(CTEX_FLAGS) $(TEX_SRC)
 
 clean:

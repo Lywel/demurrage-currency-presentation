@@ -7,6 +7,7 @@
 ]{metropolis}
 
 \usepackage{pgfpages}
+\usepackage{movie15}
 \setbeameroption{show notes on second screen=right}
 
 % Document config
@@ -28,7 +29,7 @@
   \begin{frame}{Local and complementary currency}
     \begin{itemize}
       \item Not a replacement
-      \item Diffrent purpose
+      \item Different purpose
       \item Solve \alert{local} problems
     \end{itemize}
     \note{Local problems like unemployment, money hoarding}
@@ -134,20 +135,10 @@
   \end{frame}
 
 
-
-
-
-
-
-
-
-
   % BREAAAAAAK
   \begin{frame}[standout]
     BREAK
   \end{frame}
-
-
 
   \section{Experience of building decentralized applications}
 
@@ -210,5 +201,146 @@
 
 
   \section{Custom consensus}
+
+
+  \section{Consensus}
+
+  \begin{frame}{Consensus in blockchain}
+    \begin{itemize}
+      \item Rules that define the blockchain
+      \item Block creation and validation
+      \item Many popular consensus
+    \end{itemize}
+    \note{Major part in blockchain implementation\\
+        Rules to take decision on a blockchain, create and validate blocks\\
+        Plenty of consensus, we explored the most populars}
+  \end{frame}
+
+  \begin{frame}{Proof of work}
+    \begin{itemize}
+      \item Block creation require CPU usage
+      \item Complex mathematical operation
+    \end{itemize}
+    \note{Used by bitcoin\\
+    Solving mathematical problem to hash the new block\\
+    Called minning\\
+    Reward first miner\\
+    Criticized: energy consumption required\\
+    Blockchain growing = more amount of energy}
+  \end{frame}
+
+  \begin{frame}{Proof of stake}
+    \begin{itemize}
+      \item Block creation require stake
+      \item Use less energy
+      \item Has some vulnerabilities
+    \end{itemize}
+    \note{Same hashing process\\
+    Block creator chosen in a deterministic way\\
+    Depending on wealth, stake\\
+    No block reward\\
+    Transaction fee as a reward\\
+    Less energy consumption}
+  \end{frame}
+
+  \begin{frame}{Delegated proof of stake}
+    \begin{itemize}
+      \item Proof of stake with voting system
+    \end{itemize}
+    \note{People vote for the next miner\\
+    a few selected peers can work\\
+    Vote strength determined by tokens held}
+  \end{frame}
+
+  \begin{frame}{Proof of authority}
+    \begin{itemize}
+      \item Indentity as a stake
+      \item Require a central authority
+    \end{itemize}
+    \note{not anonymous\\
+    blocks validated by approved accounts (validators)\\
+    identity = reputation\\
+    earn the right to become validators\\
+    not decentralized}
+  \end{frame}
+
+  \begin{frame}{Practical Byzantine fault tolerance}
+    \begin{itemize}
+      \item State machine replication
+      \item Work with malicious nodes
+      \item 2/3 votes to reach concensus
+    \end{itemize}
+    \note{every validator share state\\
+    deterministic steps (state machine replication)\\
+    work with less 1/3 malicious nodes\\
+    }
+  \end{frame}
+
+  \begin{frame}{Advantages of PBFT}
+    \begin{itemize}
+      \item Transaction finality
+      \item Energy efficient
+      \item Each validator can be rewarded
+      \item High performances on small networks
+    \end{itemize}
+    \note{very effective on small networks (40 nodes)
+    }
+  \end{frame}
+
+  \section{Our take on those techs}
+
+  \begin{frame}{Build a blockchain from scratch}
+    \begin{figure}
+      \includegraphics[height=.35\textheight]{images/scratch}
+      \caption{blockchain}
+    \end{figure}
+    \note{more liberties\\choose consensus\\reward miners\\no transaction fees\\do not depend on another blockchain}
+  \end{frame}
+
+  \begin{frame}{Istanbul Byzantine fault tolerance (IBFT)}
+    \begin{itemize}
+      \item Improvement of PBFT
+      \item Gossip network
+      \item Optimisations
+    \end{itemize}
+    \note{Implemented by Quorum and a fork of ethereum\\
+      Gossip network\\
+      More validators with better performances
+    }
+  \end{frame}
+
+  \begin{frame}{Clique PoA}
+    \begin{itemize}
+      \item Signers submit blocks
+      \item Voting system
+      \item Protection against malicious signers
+    \end{itemize}
+    \note{ signers submit block sequentialy\\
+      signers are identified, we can know who submitted\\
+      possibility to vote
+    }
+  \end{frame}
+
+  \begin{frame}{IBFT + PoA}
+    \begin{itemize}
+      \item Semi-decentralized blockchain
+      \item Central authority delivers authorizations
+      \item Small network (100 validators)
+    \end{itemize}
+    \note{semi-decentralized blockchain\\
+      central authority (first node) allow validators\\
+      fast, secure and low energy consumption
+    }
+  \end{frame}
+
+  \begin{frame}{Problems encountered}
+    \begin{itemize}
+      \item Create a TCP communication protocol
+      \item A lot of cryptography
+      \item Synchronization between validators
+    \end{itemize}
+
+  \end{frame}
+
 
 \end{document}
